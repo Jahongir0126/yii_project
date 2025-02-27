@@ -9,3 +9,4 @@
 
 #docker exec -it yii_nginx bash
 # nginx -s reload# yii_project
+# yii_project
