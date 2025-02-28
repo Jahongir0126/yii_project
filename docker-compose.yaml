@@ -11,7 +11,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - DB_DSN=mysql:host=db;dbname=php_oop_crud_level_1
+      - DB_DSN=mysql:host=db;dbname=php
       - DB_USER=root
       - DB_PASS=root
     depends_on:

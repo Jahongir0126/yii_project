@@ -1,7 +1,11 @@
+<?php
+/** @var $model \models\User */
+?>
+
 <h2>Create an account</h2>
 
 
-<?php $form =  \core\form\Form::begin('/register', 'post') ?>
+<?php $form =  \core\form\Form::begin('', 'post') ?>
 <div class="row">
 <div class="col">
     <?php echo $form->field($model, 'firstName') ?>
