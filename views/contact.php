@@ -1,23 +1,17 @@
-
 <?php
-
+/** @var $this \core\View */
+/** @var $this \modules\ContactForm */
+$this->title = 'Contact';
 
 ?>
 
 <h2>Contact us</h2>
-<form action="" method="post">
-    <div class="form-group">
-        <label >Subject</label>
-        <input type="text" name="subject" class="form-control" >
-    </div>
-    <div class="form-group">
-        <label >Email</label>
-        <input type="text" name="email" class="form-control" >
-    </div>
-    <div class="form-group">
-        <label >Body</label>
-        <textarea type="text" name="body" class="form-control" ></textarea>
-    </div> 
-    
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<?php $form = \core\form\Form::begin('','post') ?>
+<?php echo $form->field($model,'subject') ?>
+<?php echo $form->field($model,'email') ?>    
+
+<?php echo $form->field($model,'body') ?>
+<button type="submit" class="btn btn-primary">Submit</button>
+
+<?php \core\form\Form::end() ?>
+
