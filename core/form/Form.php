@@ -2,7 +2,7 @@
 namespace core\form;
 
 use core\Model;
-use core\form\Field;
+use core\form\InputField;
 
 class Form{
     public static function begin($action ,$method )
@@ -16,7 +16,6 @@ class Form{
         echo  '</form>';
     }
     public function field(Model $model,$attribute){
-        return new Field($model,$attribute);
+        return new InputField($model,$attribute);
     }
-
 }

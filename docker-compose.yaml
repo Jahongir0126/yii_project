@@ -23,7 +23,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: php_oop_crud_level_1
+      MYSQL_DATABASE: php
     ports:
       - "3306:3306"
     volumes:

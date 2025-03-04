@@ -1,8 +1,8 @@
 <?php
 
 namespace core;
+use core\db\Database;
 use core\Response;
-use core\Database;
 /**
  * Class Appplication
  *       
@@ -20,7 +20,7 @@ class Application
     public Database $db;
     public static Application $app;
     public ?Controller $controller =null;
-    public ?DbModel $user = null;
+    public ?UserModel $user = null;
     public View $view;
 
     public function __construct($rootPath, array $config)
@@ -42,7 +42,7 @@ class Application
             $primaryKey = $this->userClass::primaryKey();
             $user = $this->userClass::findOne([$primaryKey => $primaryValue]);
             // Присваиваем только если получили объект DbModel
-            if ($user instanceof DbModel) {
+            if ($user instanceof UserModel) {
                 $this->user = $user;
             }
         }
@@ -73,7 +73,7 @@ class Application
         $this->controller = $controller;
     }
 
-    public function login(DbModel $user)
+    public function login(UserModel $user)
     {
         $this->user = $user;
         $primaryKey = $user->primaryKey();

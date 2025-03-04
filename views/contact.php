@@ -1,6 +1,14 @@
-<?php
+ <?php
+
+
 /** @var $this \core\View */
 /** @var $this \modules\ContactForm */
+
+use core\form\TextAreaField;
+
+
+
+
 $this->title = 'Contact';
 
 ?>
@@ -10,7 +18,8 @@ $this->title = 'Contact';
 <?php echo $form->field($model,'subject') ?>
 <?php echo $form->field($model,'email') ?>    
 
-<?php echo $form->field($model,'body') ?>
+<?php echo new TextAreaField($model,'body') ?>
+
 <button type="submit" class="btn btn-primary">Submit</button>
 
 <?php \core\form\Form::end() ?>

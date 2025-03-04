@@ -31,13 +31,6 @@ class Session
         return $_SESSION[self::FLASH_KEY][$key]['value'] ?? false;
     }
 
-    // public function delete($key)
-    // {
-    //     if (isset($_SESSION[$key])) {
-    //         unset($_SESSION[$key]);
-    //     }
-    // }
-
     public function __destruct()
     {
     $flashMessages =$_SESSION[self::FLASH_KEY] ?? [];
